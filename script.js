@@ -8,14 +8,14 @@ menuIcon.onclick = () => {
 
 
 const typed = new Typed(".text", {
-  strings: ["Frontend Developer", " UI/UX Designer"],
+  strings: ["Web Developer", " UI/UX Designer"],
   typeSpeed: 90,
   backSpeed: 100,
   backDelay:1000,
   loop:true,
 });
 
-//About Me Text Section Animation------------------------------------------------------------------------------------------------------
+//-------------About Me Text Section Animation-------------------------
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -109,12 +109,21 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 
+//-------------------------------------------------Contact Me Text Animation------------------------------------
 
 
-
-
-
-
-
-
-
+document.addEventListener('DOMContentLoaded', function() {
+    const target = document.querySelector('.animate-contact');
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            } else {
+                entry.target.classList.remove('visible'); // Remove the class when the element is out of view
+            }
+        });
+    }, { threshold: 0.5 }); // Trigger when 50% of the section is visible
+  
+    observer.observe(target);
+  });
