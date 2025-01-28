@@ -863,7 +863,7 @@ section {
 
 @media(max-width: 450px) {
   .home-img img {
-    width: 250px;
+    width: 600px;
   }
 
   .footer {
